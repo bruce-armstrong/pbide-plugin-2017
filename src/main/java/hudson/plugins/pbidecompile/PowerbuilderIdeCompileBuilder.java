@@ -56,6 +56,7 @@ public class PowerbuilderIdeCompileBuilder extends Builder {
 	 * GUI fields
 	 */
 	private final String powerbuilderIdeCompileName;
+	private final String pbwFile;
 	private final String pbtFile;
 	private final boolean continueOnBuildFailure;
 	private final boolean unstableIfWarnings;
@@ -74,8 +75,9 @@ public class PowerbuilderIdeCompileBuilder extends Builder {
 	 *            If true, job will be unstable if there are warnings
 	 */
 	@DataBoundConstructor
-	public PowerbuilderIdeCompileBuilder(String powerbuilderIdeCompileName, String pbtFile, boolean continueOnBuildFailure, boolean unstableIfWarnings) {
+	public PowerbuilderIdeCompileBuilder(String powerbuilderIdeCompileName, String pbwFile, String pbtFile, boolean continueOnBuildFailure, boolean unstableIfWarnings) {
 		this.powerbuilderIdeCompileName = powerbuilderIdeCompileName;
+		this.pbwFile = pbwFile;
 		this.pbtFile = pbtFile;
 		this.continueOnBuildFailure = continueOnBuildFailure;
 		this.unstableIfWarnings = unstableIfWarnings;
@@ -85,6 +87,10 @@ public class PowerbuilderIdeCompileBuilder extends Builder {
 		return powerbuilderIdeCompileName;
 	}
 
+	public String getPbwFile() {
+		return pbwFile;
+	}
+	
 	public String getPbtFile() {
 		return pbtFile;
 	}
@@ -153,12 +159,13 @@ public class PowerbuilderIdeCompileBuilder extends Builder {
 		EnvVars env = build.getEnvironment(listener);
 		FilePath pwd = build.getModuleRoot();
 
-		String powerbuilderIdeArgs = "/t " + build.getWorkspace() + "\\" + pbtFile ;
-		args.add(powerbuilderIdeArgs);
-		powerbuilderIdeArgs = "/d";
-		args.add(powerbuilderIdeArgs);
-		powerbuilderIdeArgs = "/out pbide.log" ;
-		args.add(powerbuilderIdeArgs);
+		args.add("/w");
+		args.add(pbwFile);
+		args.add("/t");
+		args.add(pbtFile);
+		args.add("/d");
+		args.add("/out");
+		args.add("pbide.log") ;
 		
 		if (!launcher.isUnix()) {
 			final int cpi = getCodePageIdentifier(build.getCharset());

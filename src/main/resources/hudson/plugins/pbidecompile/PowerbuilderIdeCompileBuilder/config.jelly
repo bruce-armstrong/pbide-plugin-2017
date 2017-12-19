@@ -31,6 +31,9 @@ THE SOFTWARE.
             </j:forEach>
         </select>
     </f:entry>
+    <f:entry title="${%PBW File}" field="pbwFile">
+        <f:textbox name="powerbuilderIdeCompileBuilder.pbwFile" value="${instance.pbwFile}"/>
+    </f:entry>
     <f:entry title="${%PBT File}" field="pbtFile">
         <f:textbox name="powerbuilderIdeCompileBuilder.pbtFile" value="${instance.pbtFile}"/>
     </f:entry>
