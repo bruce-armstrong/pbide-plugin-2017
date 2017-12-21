@@ -67,8 +67,6 @@ public class PowerbuilderIdeCompileBuilder extends Builder {
 	 *
 	 * @param powerbuilderIdeCompileName
 	 *            The PowerBuilder IDE logical name
-	 * @param pbwFile
-	 *            The name/location of the PBW file for the workspace
 	 * @param pbtFile
 	 *            The name/location of the PBT file for the project
 	 * @param continueOnBuildFailure

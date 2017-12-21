@@ -26,20 +26,10 @@
 
     <developers>
         <developer>
-            <id>gbois</id>
-            <name>Gregory Boissinot</name>
-            <email>gregory.boissinot@gmail.com</email>
-            <timezone>+1</timezone>
-        </developer>
-        <developer>
-            <id>kdsweeney</id>
-            <name>Kyle Sweeney</name>
-            <email>kyle.sweeney@valtech.com</email>
-        </developer>
-        <developer>
-            <id>marshall777</id>
-            <name>Lionel Cabasson</name>
-            <email>marshall777@gmail.com</email>
+            <id>bruce</id>
+            <name>Bruce Armstrong</name>
+            <email>bruce.armstrong@yahoo.com</email>
+            <timezone>-8</timezone>
         </developer>
     </developers>
 
